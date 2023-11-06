@@ -1,10 +1,13 @@
 from flask_login import UserMixin
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import relationship
+from decouple import config
+
+
 
 # URL and api key for generating random avatar
 AVATAR_GENERATOR_URL = 'https://api.multiavatar.com/'
-MULTIAVATAR_API_KEY = 'NDbS9WgI7qv8hL'
+MULTIAVATAR_API_KEY = config('MULTIAVATAR_API_KEY')
 
 db = SQLAlchemy()
 

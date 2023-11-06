@@ -7,6 +7,7 @@ from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
 from sqlalchemy.exc import IntegrityError
 import yagmail
+from decouple import config
 # Import needed tables in database
 from tables import db, BlogPost, User, Comment
 # Import needed forms from the forms.py
@@ -14,10 +15,10 @@ from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 
 
 MY_EMAIL = 'malborohell@gmail.com'
-EMAIL_APP_PW = 'uyltcirxtaxvttcy'
+EMAIL_APP_PW = config('EMAIL_APP_PW')
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = config('SECRET_APP_KEY')
 ckeditor = CKEditor(app)
 Bootstrap5(app)
 
@@ -48,7 +49,7 @@ def admin_only(function):
 
 
 # CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///myblog.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = config('DB_URI')
 db.init_app(app)
 with app.app_context():
     db.create_all()
