@@ -38,11 +38,11 @@
         {% endif %}
         <hr class="my-4">
         <!-- Comments Area -->
-        <!-- TODO: Add a CKEditor for commenting below -->
+        <!--  Add a CKEditor for commenting below -->
         <div class="comment">
           {{ ckeditor.load() }}
           {{ render_form(comment_form, id="commentForm") }}
-          <!-- TODO: Show all the comments on a post -->
+          <!--  Show all the comments on a post -->
           <ul class="commentList">
             {% for comment in post.comments %}
             <li>
