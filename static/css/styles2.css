@@ -1,0 +1,28 @@
+#navbarResponsive {
+    height: 40px;
+}
+
+.commentList li {
+    margin: 0;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.commentList li > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.commenterImage {
+    width: 40px;
+    margin-right: 8px;
+}
+
+.send-msg-btn {
+    float: right;
+}
+
+.post-body > p {
+    word-wrap: break-word;
+}
