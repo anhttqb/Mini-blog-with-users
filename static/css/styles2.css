@@ -1,5 +1,7 @@
-#navbarResponsive {
-    height: 40px;
+@media (min-width: 990px) {
+    #navbarResponsive {
+        height: 40px;
+    }
 }
 
 .commentList li {
